@@ -1,35 +1,10 @@
 # FormLess-Common-API
 
-## /链游api
-```text
-暂无描述
-```
-#### 公共Header参数
-参数名 | 示例值 | 参数描述
---- | --- | ---
-暂无参数
-#### 公共Query参数
-参数名 | 示例值 | 参数描述
---- | --- | ---
-暂无参数
-#### 公共Body参数
-参数名 | 示例值 | 参数描述
---- | --- | ---
-暂无参数
-#### 预执行脚本
-```javascript
-暂无预执行脚本
-```
-#### 后执行脚本
-```javascript
-暂无后执行脚本
-```
 ## /链游api/获取指定币种汇率
 ```text
 暂无描述
 ```
-#### 接口状态
-> 开发中
+
 
 #### 接口URL
 > http://118.113.15.73:3002/formless-api/exchangeRate/getByCode?code=CNY
@@ -44,13 +19,7 @@
 参数名 | 示例值 | 参数类型 | 是否必填 | 参数描述
 --- | --- | --- | --- | ---
 code | CNY | Text | 是 | 币种名，参考所有币种中币种名
-#### 预执行脚本
-```javascript
-暂无预执行脚本
-```
-#### 后执行脚本
-```javascript
-暂无后执行脚本
+
 ```
 #### 成功响应示例
 ```javascript
@@ -85,11 +54,6 @@ data.createTime | 2021-09-22T10:59:42.000+00:00 | Text |
 data.updateTime | 2021-10-11T00:22:09.000+00:00 | Text | 时间
 data.strikeOut | 0 | Text | 
 ## /链游api/获取所有实体币种汇率
-```text
-暂无描述
-```
-#### 接口状态
-> 开发中
 
 #### 接口URL
 > http://118.113.15.73:3002/formless-api/exchangeRate/list
@@ -100,14 +64,6 @@ data.strikeOut | 0 | Text |
 #### Content-Type
 > form-data
 
-#### 预执行脚本
-```javascript
-暂无预执行脚本
-```
-#### 后执行脚本
-```javascript
-暂无后执行脚本
-```
 #### 成功响应示例
 ```javascript
 {
@@ -1807,8 +1763,7 @@ data.strikeOut | 0 | Text |
 ```text
 暂无描述
 ```
-#### 接口状态
-> 开发中
+
 
 #### 接口URL
 > http://118.113.15.73:3002/formless-api/config/list
@@ -1819,14 +1774,7 @@ data.strikeOut | 0 | Text |
 #### Content-Type
 > form-data
 
-#### 预执行脚本
-```javascript
-暂无预执行脚本
-```
-#### 后执行脚本
-```javascript
-暂无后执行脚本
-```
+
 #### 成功响应示例
 ```javascript
 {

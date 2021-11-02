@@ -1,3 +1,4 @@
+```javascript
 {
       "0x3BA4c387f786bFEE076A58914F5Bd38d668B42c3": {
         "name": "BNB",
@@ -140,3 +141,4 @@
         "decimals": 18
       }
  }
+```

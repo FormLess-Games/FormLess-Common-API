@@ -2,7 +2,7 @@
 {
       "0x3BA4c387f786bFEE076A58914F5Bd38d668B42c3": {
         "name": "BNB",
-        "logo": "	https://polygonscan.com/token/images/bnb_28_2.png",
+        "logo": "https://polygonscan.com/token/images/bnb_28_2.png",
         "erc20": true,
         "symbol": "BNB",
         "decimals": 18

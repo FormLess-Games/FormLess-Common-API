@@ -565,3 +565,251 @@ baseURL:https://formless.me/api
 	"status": 0
 }
 ```
+
+## 搜索板块+主题信息
+
+
+**接口地址**:`/forum/module/search`
+
+
+**请求方式**:`POST`
+
+
+**请求数据类型**:`application/x-www-form-urlencoded,application/json`
+
+
+**响应数据类型**:`*/*`
+
+
+**接口描述**:
+
+
+**请求示例**:
+
+
+```javascript
+{
+  "forumTypeId": 0,
+  "keyword": "",
+  "page": 0,
+  "size": 0
+}
+```
+
+
+**请求参数**:
+
+
+**请求参数**:
+
+
+| 参数名称                | 参数说明           | 请求类型 | 是否必须 | 数据类型           | schema             |
+| ----------------------- | ------------------ | -------- | -------- | ------------------ | ------------------ |
+| forumModuleQueryVO      | ForumModuleQueryVO | body     | true     | ForumModuleQueryVO | ForumModuleQueryVO |
+| &emsp;&emsp;forumTypeId | 论坛类型id         |          | false    | integer(int64)     |                    |
+| &emsp;&emsp;keyword     | 搜索关键字         |          | false    | string             |                    |
+| &emsp;&emsp;page        | 多少页             |          | false    | integer(int32)     |                    |
+| &emsp;&emsp;size        | 一页多少           |          | false    | integer(int32)     |                    |
+
+
+**响应状态**:
+
+
+| 状态码 | 说明         | schema                   |
+| ------ | ------------ | ------------------------ |
+| 200    | OK           | RD«Page«ForumModuleDTO»» |
+| 201    | Created      |                          |
+| 401    | Unauthorized |                          |
+| 403    | Forbidden    |                          |
+| 404    | Not Found    |                          |
+
+
+**响应参数**:
+
+
+| 参数名称                                                     | 参数说明                     | 类型                 | schema               |
+| ------------------------------------------------------------ | ---------------------------- | -------------------- | -------------------- |
+| data                                                         |                              | Page«ForumModuleDTO» | Page«ForumModuleDTO» |
+| &emsp;&emsp;countId                                          |                              | string               |                      |
+| &emsp;&emsp;current                                          |                              | integer(int64)       |                      |
+| &emsp;&emsp;maxLimit                                         |                              | integer(int64)       |                      |
+| &emsp;&emsp;optimizeCountSql                                 |                              | boolean              |                      |
+| &emsp;&emsp;orders                                           |                              | array                | OrderItem            |
+| &emsp;&emsp;&emsp;&emsp;asc                                  |                              | boolean              |                      |
+| &emsp;&emsp;&emsp;&emsp;column                               |                              | string               |                      |
+| &emsp;&emsp;pages                                            |                              | integer(int64)       |                      |
+| &emsp;&emsp;records                                          |                              | array                | ForumModuleDTO       |
+| &emsp;&emsp;&emsp;&emsp;customize                            | 是否自定义模块(1.是0.否)     | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;forumTypeId                          | 论坛类型id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;id                                   | 论坛板块id                   | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;labels                               | 子模块列表                   | array                | ForumLabelDTO        |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;forumModuleId            | 论坛板块id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;id                       | id                           | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;labelName                | 标签名称                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;moduleBackImage                      | 板块背景图片                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;moduleImage                          | 板块预览图片                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;moduleModeratorId                    | 板块版主id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;moduleModeratorName                  | 板块版主昵称                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;moduleName                           | 板块名称                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;topicCount                           | 帖子数量                     | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;topics                               | 主题列表                     | array                | ForumTopicDTO        |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;collectCount             | 收藏数                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;commentCount             | 评论数                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;commentTime              | 最后评论时间                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;comments                 | 主题回复                     | array                | ForumCommentDTO      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;childComments |                              | array                | ForumCommentDTO      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;commentCount | 评论数                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;content      | 回复内容                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;createTime   | 创建时间                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;formatDate   |                              | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;forumCommentId | 所属评论id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;forumTopocId | 论坛主题id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;id           | 论坛评论id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;isUp         | 该用户是否点赞该记录         | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;toUserHeadImg | 回复用户图像                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;toUserId     | 回复用户id                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;toUserName   | 回复用户名称                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;upCount      | 点赞数                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userHeadImg  | 用户头像                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userId       | 用户id                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userName     | 用户名称                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;content                  | 帖子内容                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;contentText              | 帖子纯文本内容               | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;createTime               | 创建时间                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;formatDate               | 格式化时间                   | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;forumModuleId            | 论坛板块id                   | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gameId                   | 游戏id                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gameImages               | 游戏图像                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;gameTitle                | 游戏标题                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;id                       | 主题id                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;isGreat                  | 是否精华(1.是 0.否)          | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;isTop                    | 是否置顶(1.是 0.否)          | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;isUp                     | 该用户是否点赞该记录1.是0.否 | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;labelId                  | 论坛子板块id                 | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;labelName                | 论坛子板块名称               | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;title                    | 帖子标题                     | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;topicCount               | 论坛帖子数                   | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;upCount                  | 点赞数                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userHeadImg              | 发帖用户头像                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userId                   | 用户id                       | integer              |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;userName                 | 发帖用户名称                 | string               |                      |
+| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;viewCount                | 浏览数                       | integer              |                      |
+| &emsp;&emsp;searchCount                                      |                              | boolean              |                      |
+| &emsp;&emsp;size                                             |                              | integer(int64)       |                      |
+| &emsp;&emsp;total                                            |                              | integer(int64)       |                      |
+| msg                                                          |                              | string               |                      |
+| status                                                       |                              | integer(int32)       | integer(int32)       |
+
+
+**响应示例**:
+```javascript
+{
+	"data": {
+		"countId": "",
+		"current": 0,
+		"maxLimit": 0,
+		"optimizeCountSql": true,
+		"orders": [
+			{
+				"asc": true,
+				"column": ""
+			}
+		],
+		"pages": 0,
+		"records": [
+			{
+				"customize": 0,
+				"forumTypeId": 0,
+				"id": "",
+				"labels": [
+					{
+						"forumModuleId": 0,
+						"id": 0,
+						"labelName": ""
+					}
+				],
+				"moduleBackImage": "",
+				"moduleImage": "",
+				"moduleModeratorId": 0,
+				"moduleModeratorName": "",
+				"moduleName": "",
+				"topicCount": 0,
+				"topics": [
+					{
+						"collectCount": 0,
+						"commentCount": 0,
+						"commentTime": "",
+						"comments": [
+							{
+								"childComments": [
+									{
+										"childComments": [
+											{}
+										],
+										"commentCount": 0,
+										"content": "",
+										"createTime": "",
+										"formatDate": "",
+										"forumCommentId": 0,
+										"forumTopocId": 0,
+										"id": 0,
+										"isUp": 0,
+										"toUserHeadImg": "",
+										"toUserId": 0,
+										"toUserName": "",
+										"upCount": 0,
+										"userHeadImg": "",
+										"userId": 0,
+										"userName": ""
+									}
+								],
+								"commentCount": 0,
+								"content": "",
+								"createTime": "",
+								"formatDate": "",
+								"forumCommentId": 0,
+								"forumTopocId": 0,
+								"id": 0,
+								"isUp": 0,
+								"toUserHeadImg": "",
+								"toUserId": 0,
+								"toUserName": "",
+								"upCount": 0,
+								"userHeadImg": "",
+								"userId": 0,
+								"userName": ""
+							}
+						],
+						"content": "",
+						"contentText": "",
+						"createTime": "",
+						"formatDate": "",
+						"forumModuleId": "",
+						"gameId": 0,
+						"gameImages": "",
+						"gameTitle": "",
+						"id": 0,
+						"isGreat": 0,
+						"isTop": 0,
+						"isUp": 0,
+						"labelId": 0,
+						"labelName": "",
+						"title": "",
+						"topicCount": 0,
+						"upCount": 0,
+						"userHeadImg": "",
+						"userId": 0,
+						"userName": "",
+						"viewCount": 0
+					}
+				]
+			}
+		],
+		"searchCount": true,
+		"size": 0,
+		"total": 0
+	},
+	"msg": "",
+	"status": 0
+}
+```

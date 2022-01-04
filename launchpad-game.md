@@ -41,7 +41,7 @@ baseURL:https://formless.me/api
 | 参数名称                  | 参数说明                                                     | 请求类型 | 是否必须 | 数据类型         | schema           |
 | ------------------------- | ------------------------------------------------------------ | -------- | -------- | ---------------- | ---------------- |
 | forumTopicPageVO          | ForumTopicPageVO                                             | body     | true     | ForumTopicPageVO | ForumTopicPageVO |
-| &emsp;&emsp;forumLabelId  | 论坛标签id(子版块)1-攻略/2-反馈                                           |          | false    | integer(int64)   |                  |
+| &emsp;&emsp;forumLabelId  | 论坛标签id(子版块)1-攻略/2-反馈  -无参数则查询所有                                         |          | false    | integer(int64)   |                  |
 | &emsp;&emsp;forumModuleId | 论坛板块id                                                   |          | true     | integer(int64)   |                  |
 | &emsp;&emsp;keyword       | 搜索关键字                                                   |          | false    | string           |                  |
 | &emsp;&emsp;page          | 页数                                                         |          | true     | integer(int32)   |                  |

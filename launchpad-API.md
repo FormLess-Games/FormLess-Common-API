@@ -18,15 +18,15 @@
 **接口描述**:<p>支持的排序字段 act_yield;yield;act_score;score;act_player_count;player_count ;review_count ;article_count ;sub_count </p>
 act真实数据
 无act干扰后的排序
-yield 收益率干扰值
-act_yield 真实收益率
-score 评分干扰值
-act_score 真实评分
-player_count 干扰玩家总计
-act_player_count 真实玩家总计
-review_count 评论数
-article_count 贴子数
-sub_count 预约数
+* yield 收益率干扰值
+* act_yield 真实收益率
+* score 评分干扰值
+* act_score 真实评分
+* player_count 干扰玩家总计
+* act_player_count 真实玩家总计
+* review_count 评论数
+* article_count 贴子数
+* sub_count 预约数
 
 
 

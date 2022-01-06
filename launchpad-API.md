@@ -16,6 +16,17 @@
 
 
 **接口描述**:<p>支持的排序字段 act_yield;yield;act_score;score;act_player_count;player_count ;review_count ;article_count ;sub_count </p>
+act真实数据
+无act干扰后的排序
+yield 收益率干扰值
+act_yield 真实收益率
+score 评分干扰值
+act_score 真实评分
+player_count 干扰玩家总计
+act_player_count 真实玩家总计
+review_count 评论数
+article_count 贴子数
+sub_count 预约数
 
 
 
@@ -52,8 +63,8 @@
 | &emsp;&emsp;current            | 页码                 |          | false    | integer(int64)  |                 |
 | &emsp;&emsp;link_type          | 所在链               |          | false    | string          |                 |
 | &emsp;&emsp;order_items        | 排序字段列表         |          | false    | array           | OrderItem       |
-| &emsp;&emsp;&emsp;&emsp;asc    |                      |          | false    | boolean         |                 |
-| &emsp;&emsp;&emsp;&emsp;column |                      |          | false    | string          |                 |
+| &emsp;&emsp;&emsp;&emsp;asc    | 是否是升序                     |          | false    | boolean         |                 |
+| &emsp;&emsp;&emsp;&emsp;column | 排序字段                     |          | false    | string          |                 |
 | &emsp;&emsp;platform_type      | 游戏平台             |          | false    | string          |                 |
 | &emsp;&emsp;size               | 每页显示结果条目数量 |          | false    | integer(int64)  |                 |
 | &emsp;&emsp;title              | 游戏名称             |          | false    | string          |                 |

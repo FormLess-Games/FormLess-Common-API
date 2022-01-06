@@ -63,8 +63,8 @@ act真实数据
 | &emsp;&emsp;current            | 页码                 |          | false    | integer(int64)  |                 |
 | &emsp;&emsp;link_type          | 所在链               |          | false    | string          |                 |
 | &emsp;&emsp;order_items        | 排序字段列表         |          | false    | array           | OrderItem       |
-| &emsp;&emsp;&emsp;&emsp;asc    | 是否是升序                     |          | false    | boolean         |                 |
-| &emsp;&emsp;&emsp;&emsp;column | 排序字段                     |          | false    | string          |                 |
+| &emsp;&emsp;&emsp;&emsp;asc    | 是否是升序           |          | false    | boolean         |                 |
+| &emsp;&emsp;&emsp;&emsp;column | 排序字段             |          | false    | string          |                 |
 | &emsp;&emsp;platform_type      | 游戏平台             |          | false    | string          |                 |
 | &emsp;&emsp;size               | 每页显示结果条目数量 |          | false    | integer(int64)  |                 |
 | &emsp;&emsp;title              | 游戏名称             |          | false    | string          |                 |
@@ -342,6 +342,183 @@ act真实数据
 		"size": 0,
 		"total": 0
 	},
+	"msg": "",
+	"status": 0
+}
+```
+
+
+
+
+
+
+
+## 四.获取游戏类型列表
+
+
+**接口地址**:`/openApi/type/list`
+
+
+**请求方式**:`GET`
+
+
+**请求数据类型**:`application/x-www-form-urlencoded`
+
+
+**响应数据类型**:`*/*`
+
+
+**接口描述**:
+
+
+**请求参数**:
+
+
+**请求参数**:
+
+
+| 参数名称 | 参数说明                         | 请求类型 | 是否必须 | 数据类型 | schema |
+| -------- | -------------------------------- | -------- | -------- | -------- | ------ |
+| sort     | 排序字段,可用值:gameCount        | query    | false    | string   |        |
+| order    | 升序ASC/降序DESC,可用值:ASC,DESC | query    | false    | string   |        |
+
+
+**响应状态**:
+
+
+| 状态码 | 说明         | schema                |
+| ------ | ------------ | --------------------- |
+| 200    | OK           | RD«List«GameTypeDTO»» |
+| 401    | Unauthorized |                       |
+| 403    | Forbidden    |                       |
+| 404    | Not Found    |                       |
+
+
+**响应参数**:
+
+
+| 参数名称              | 参数说明             | 类型           | schema         |
+| --------------------- | -------------------- | -------------- | -------------- |
+| data                  |                      | array          | GameTypeDTO    |
+| &emsp;&emsp;gameCount | 游戏数               | integer(int32) |                |
+| &emsp;&emsp;id        | id                   | integer(int64) |                |
+| &emsp;&emsp;status    | 状态 (0.正常 1.禁用) | integer(int32) |                |
+| &emsp;&emsp;typeIcon  | 图标                 | string         |                |
+| &emsp;&emsp;typeName  | 类型名称             | string         |                |
+| &emsp;&emsp;zh_CN     | 中文                 | GameTypeDTO    | GameTypeDTO    |
+| msg                   |                      | string         |                |
+| status                |                      | integer(int32) | integer(int32) |
+
+
+**响应示例**:
+```javascript
+{
+	"data": [
+		{
+			"gameCount": 0,
+			"id": 0,
+			"status": 0,
+			"typeIcon": "",
+			"typeName": "",
+			"zh_CN": {
+				"gameCount": 0,
+				"id": 0,
+				"status": 0,
+				"typeIcon": "",
+				"typeName": "",
+				"zh_CN": {}
+			}
+		}
+	],
+	"msg": "",
+	"status": 0
+}
+```
+
+
+
+
+
+
+## 五.后台搜索可用游戏标签列表
+
+
+**接口地址**:`/openApi/label/search`
+
+
+**请求方式**:`GET`
+
+
+**请求数据类型**:`application/x-www-form-urlencoded`
+
+
+**响应数据类型**:`*/*`
+
+
+**接口描述**:
+
+
+**请求参数**:
+
+
+**请求参数**:
+
+
+| 参数名称 | 参数说明 | 请求类型 | 是否必须 | 数据类型 | schema |
+| -------- | -------- | -------- | -------- | -------- | ------ |
+| keyword  | keyword  | query    | true     | string   |        |
+
+
+**响应状态**:
+
+
+| 状态码 | 说明         | schema                 |
+| ------ | ------------ | ---------------------- |
+| 200    | OK           | RD«List«GameLabelDTO»» |
+| 401    | Unauthorized |                        |
+| 403    | Forbidden    |                        |
+| 404    | Not Found    |                        |
+
+
+**响应参数**:
+
+
+| 参数名称              | 参数说明 | 类型           | schema         |
+| --------------------- | -------- | -------------- | -------------- |
+| data                  |          | array          | GameLabelDTO   |
+| &emsp;&emsp;addHeat   | 附加热度 | integer(int32) |                |
+| &emsp;&emsp;gameCount | 游戏数   | integer(int32) |                |
+| &emsp;&emsp;gameHeat  | 总热度   | integer(int32) |                |
+| &emsp;&emsp;id        | id       | integer(int64) |                |
+| &emsp;&emsp;labelName | 标签名称 | string         |                |
+| &emsp;&emsp;realHeat  | 真实热度 | integer(int32) |                |
+| &emsp;&emsp;zh_CN     | 中文     | GameLabelDTO   | GameLabelDTO   |
+| msg                   |          | string         |                |
+| status                |          | integer(int32) | integer(int32) |
+
+
+**响应示例**:
+```javascript
+{
+	"data": [
+		{
+			"addHeat": 0,
+			"gameCount": 0,
+			"gameHeat": 0,
+			"id": 0,
+			"labelName": "",
+			"realHeat": 0,
+			"zh_CN": {
+				"addHeat": 0,
+				"gameCount": 0,
+				"gameHeat": 0,
+				"id": 0,
+				"labelName": "",
+				"realHeat": 0,
+				"zh_CN": {}
+			}
+		}
+	],
 	"msg": "",
 	"status": 0
 }

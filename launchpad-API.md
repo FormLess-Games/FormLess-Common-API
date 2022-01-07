@@ -658,3 +658,25 @@ act真实数据
 	"status": 0
 }
 ```
+**游戏平台**
+```javascript
+     {
+        WEB: "网页",
+        PC: "PC",
+        MAC: "Mac",
+        LINUX: "Linux",
+        ANDROID: "安卓",
+        IOS: "苹果"
+      }
+```
+**游戏阶段**
+```javascript
+   [
+        { name: "LIVE", value: "LIVE" },
+        { name: "PRESALE", value: "PRESALE" },
+        { name: "DEVELOP", value: "DEVELOP" },
+        { name: "ALPHA", value: "ALPHA" },
+        { name: "BETA", value: "BETA" },
+        { name: "CANCELLED", value: "CANCELLED" }
+    ]
+```

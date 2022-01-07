@@ -814,7 +814,7 @@ baseURL:https://formless.me/api
 }
 ```
 
-## /用户等级配置
+## 用户等级配置
 #### 接口URL
 > openApi/memberLevelConfig/list
 
@@ -851,5 +851,5 @@ experRequired | 0 | Text | 所需经验
 inviteIntegralReward | 110 | Text | 邀请积分奖励
 inviteExperReward | 130 | Text | 邀请经验奖励
 rakeBackProportion | 0.15 | Text | 返佣比例
-dozenNewAddition | 1.00 | Text | 打新额度加成
+dozenNewAddition | 1.00 | Text | 打新额度加成(倍率)
 userExper | - | Text | 用户经验

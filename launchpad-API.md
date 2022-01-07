@@ -60,13 +60,13 @@ act真实数据
 | 参数名称                       | 参数说明             | 请求类型 | 是否必须 | 数据类型        | schema          |
 | ------------------------------ | -------------------- | -------- | -------- | --------------- | --------------- |
 | gameInfoQueryVO                | game发行属性         | body     | true     | GameInfoQueryVO | GameInfoQueryVO |
-| &emsp;&emsp;current            | 页码                 |          | false    | integer(int64)  |                 |
+| &emsp;&emsp;current            | 页码                 |          | true    | integer(int64)  |                 |
 | &emsp;&emsp;link_type          | 所在链               |          | false    | string          |                 |
 | &emsp;&emsp;order_items        | 排序字段列表         |          | false    | array           | OrderItem       |
 | &emsp;&emsp;&emsp;&emsp;asc    | 是否是升序           |          | false    | boolean         |                 |
 | &emsp;&emsp;&emsp;&emsp;column | 排序字段             |          | false    | string          |                 |
 | &emsp;&emsp;platform_type      | 游戏平台             |          | false    | string          |                 |
-| &emsp;&emsp;size               | 每页显示结果条目数量 |          | false    | integer(int64)  |                 |
+| &emsp;&emsp;size               | 每页显示结果条目数量 |          | true    | integer(int64)  |                 |
 | &emsp;&emsp;title              | 游戏名称             |          | false    | string          |                 |
 | &emsp;&emsp;type_id            | 游戏类型             |          | false    | integer(int64)  |                 |
 

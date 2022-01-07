@@ -523,3 +523,138 @@ act真实数据
 	"status": 0
 }
 ```
+
+## 用户列表
+
+- **接口状态：** `完成`
+- **接口URL：** `/openApi/customer/list`
+- **请求方式：** `GET`
+
+### 请求参数
+
+#### Query参数及说明
+
+| 参数名   | 示例值           | 参数类型 | 是否必填 | 参数描述   |
+| :------- | :--------------- | :------- | :------- | :--------- |
+| current  | 1                | Number   | 否       | `当前页`   |
+| size     | 10               | string   | 否       | `每页几条` |
+| userName | 975681713@qq.com | String   | 否       | `用户名`   |
+
+#### body参数及说明
+
+```
+{}
+```
+
+### 响应示例
+
+#### 成功响应示例
+
+```json
+{
+    "status": 200, 
+
+    "msg": "", 
+
+    "data": {
+        "records": [
+            {
+                "id": 111121, //用户ID
+                "userName": "97568**13@qq.com", //用户名
+                "nickName": "lyh", //用户昵称
+                "walletAddress": [
+                "0x386aa07f86632263e705616fe4e3657be76c6228",
+                "0xaf209ed0abaceac53cfa50308113420fc25a21c4"
+                ], //钱包地址
+                "memberLevel": "1", //会员等级(1青铜,2白银,3黄金,4钻石)
+                "userExper": 458 //用户经验
+            }
+        ], 
+
+    "total": 1, 
+
+    "size": 10, 
+
+    "current": 1, 
+
+    "orders": [], 
+
+    "optimizeCountSql": true, 
+
+    "searchCount": true, 
+
+    "countId": null, 
+
+    "maxLimit": null, 
+
+    "pages": 1 
+
+    } 
+ 
+}
+```
+
+#### 字段描述
+
+| 参数名        | 示例值                                     | 参数类型 | 参数描述                            |
+| :------------ | :----------------------------------------- | :------- | :---------------------------------- |
+| id            | 111121                                     | Number   | `用户ID`                            |
+| userName      | 97568**13@qq.com                           | Number   | `用户名`                            |
+| nickName      | lyh                                        | String   | `用户昵称`                          |
+| walletAddress | 0x386aa07f86632263e705616fe4e3657be76c6228 | Number   | `钱包地址`                          |
+| memberLevel   | 1                                          | Number   | `会员等级(1青铜,2白银,3黄金,4钻石)` |
+| userExper     | 458                                        | Number   | `用户经验`                          |
+
+
+
+
+
+## 获取游戏链类型列表
+
+
+**接口地址**:`/game/gamelink/list`
+
+
+**请求方式**:`GET`
+
+
+**请求数据类型**:`application/x-www-form-urlencoded`
+
+
+**响应数据类型**:`*/*`
+
+
+**接口描述**:
+
+
+**请求参数**:
+
+
+无
+
+
+**响应参数**:
+
+
+| 参数名称             | 参数说明 | 类型           | schema         |
+| -------------------- | -------- | -------------- | -------------- |
+| data                 |          | array          | GameLinkTypeVO |
+| &emsp;&emsp;id       |          | integer(int64) |                |
+| &emsp;&emsp;linkName | 链名称   | string         |                |
+| msg                  |          | string         |                |
+| status               |          | integer(int32) | integer(int32) |
+
+
+**响应示例**:
+```javascript
+{
+	"data": [
+		{
+			"id": 0,
+			"linkName": ""
+		}
+	],
+	"msg": "",
+	"status": 0
+}
+```

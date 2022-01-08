@@ -69,7 +69,7 @@ act真实数据
 | &emsp;&emsp;size               | 每页显示结果条目数量 |          | true    | integer(int64)  |                 |
 | &emsp;&emsp;title              | 游戏名称             |          | false    | string          |                 |
 | &emsp;&emsp;type_id            | 游戏类型             |          | false    | integer(int64)  |                 |
-
+| &emsp;&emsp;game_stage            | 游戏阶段             |          | false    | string  |                 |
 
 **响应状态**:
 

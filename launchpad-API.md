@@ -614,7 +614,7 @@ act真实数据
 ## 获取游戏链类型列表
 
 
-**接口地址**:`/game/gamelink/list`
+**接口地址**:`https://formless.me/api/game/gamelink/list`
 
 
 **请求方式**:`GET`

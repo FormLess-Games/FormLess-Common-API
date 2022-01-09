@@ -682,3 +682,42 @@ act真实数据
         { name: "CANCELLED", value: "CANCELLED" }
     ]
 ```
+## 用户等级配置
+#### 接口URL
+> openApi/memberLevelConfig/list
+
+#### 请求方式
+> GET
+
+#### Content-Type
+> form-data
+
+#### 成功响应示例
+```javascript
+{
+	"status": 200,
+	"msg": "",
+	"data": [
+		{
+			"id": 1,
+			"memberLevel": 1,
+			"experRequired": 0,
+			"inviteIntegralReward": 110,
+			"inviteExperReward": 130,
+			"rakeBackProportion": "0.15",
+			"dozenNewAddition": "1.00",
+			"userExper": null
+		}
+	]
+}
+```
+参数名 | 示例值 | 参数类型 | 参数描述
+--- | --- | --- | ---
+id | 1 | Text | id
+memberLevel | 1 | Text | 会员等级(1-青铜,2-白银,3-黄金,4-砖石)
+experRequired | 0 | Text | 所需经验
+inviteIntegralReward | 110 | Text | 邀请积分奖励
+inviteExperReward | 130 | Text | 邀请经验奖励
+rakeBackProportion | 0.15 | Text | 返佣比例
+dozenNewAddition | 1.00 | Text | 打新额度加成(倍率)
+userExper | - | Text | 用户经验

@@ -1,6 +1,6 @@
 ## 分页获取板块内主题
 
-baseURL:https://formless.me/api
+baseURL:https://www.formless.me/api
 
 **接口地址**:`/forum/topic/page`
 

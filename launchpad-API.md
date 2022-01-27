@@ -1,4 +1,4 @@
-## 一 ：BaseURL:https://formless.me/api/
+## 一 ：BaseURL:https://www.formless.me/api/
 
 # 一 ：游戏列表
 

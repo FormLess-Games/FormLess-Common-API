@@ -541,7 +541,7 @@ act真实数据
 | userName | 975681713@qq.com | String   | 否       | `用户名`   |
 | walletAddress | 0x386aa07f86632263e705616fe4e3657be76c6228 | String   | 否       | `地址`   |
 | memberLevel | 1 | String   | 否       | `会员等级(1青铜,2白银,3黄金,4钻石)`   |
-   
+| id | 111121 | String   | 否       | `用户ID`   |
 
 #### body参数及说明
 
